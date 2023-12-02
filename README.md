@@ -8,4 +8,4 @@ Essa funcionalidade se destina a tornar o processo de memorização das tabuadas
 <br>
 Além disso, a interface do gerador de tabuadas foi projetada de maneira intuitiva e amigável, permitindo uma fácil navegação e interação. O sistema busca promover a acessibilidade, tornando a aprendizagem das tabuadas acessível a usuários de diferentes níveis de familiaridade com a matemática.
 <br>
-Em síntese, este projeto oferece uma abordagem prática e eficaz para a prática das tabuadas, com o intuito de tornar o aprendizado da multiplicação mais dinâmico e envolvente.-->
+Em síntese, este projeto oferece uma abordagem prática e eficaz para a prática das tabuadas, com o intuito de tornar o aprendizado da multiplicação mais dinâmico e envolvente.--> 
