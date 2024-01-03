@@ -1,17 +1,15 @@
-// elementos
-
 const multiplicationForm = document.querySelector("#multiplication-form");
 const numberInput = document.querySelector("#number");
 const multiplicationInput = document.querySelector("#multiplicator");
 
-const multiplicationTable = document.querySelector(
-    "#multiplication-operations"
-);
-// funçoes
+const multiplicationTitle = document.querySelector("#multiplication-title span");
+
+const multiplicationTable = document.querySelector("#multiplication-operations");
+
 const createTable = (number, multiplicatorNumber) => {
     multiplicationTable.innerHTML = "";
 
-    for (i = 1; i <= multiplicatorNumber; i++) {
+    for (let i = 1; i <= multiplicatorNumber; i++) {
         const result = number * i;
 
         console.log(result);
@@ -21,26 +19,28 @@ const createTable = (number, multiplicatorNumber) => {
         <div class="result">${result}</div>
         </div>`;
 
-        const parser = new DOMParser()
-        
-        const htmlTemplate = parser.parseFromString(template, "text/html")
+        const parser = new DOMParser();
 
-        const row = htmlTemplate.querySelector(".row")
+        const htmlTemplate = parser.parseFromString(template, "text/html");
+
+        const row = htmlTemplate.querySelector(".row");
 
         multiplicationTable.appendChild(row);
     }
-};
 
-//Eventos
+    multiplicationTitle.innerText = number;
+};
 
 multiplicationForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const multiplicationNumber = +numberInput.value;
+    const multiplicationNumber = parseInt(numberInput.value, 10);
+    const multiplicatorNumber = parseInt(multiplicationInput.value, 10);
 
-    const multiplicatorNumber = +multiplicationInput.value;
+    if (isNaN(multiplicationNumber) || isNaN(multiplicatorNumber) || multiplicationNumber <= 0 || multiplicatorNumber <= 0) {
+        alert("Por favor, insira números inteiros positivos.");
+        return;
+    }
 
-    if (!multiplicationNumber || !multiplicatorNumber) return;
-
-    console.log(multiplicationNumber, multiplicatorNumber);
+    createTable(multiplicationNumber, multiplicatorNumber);
 });
